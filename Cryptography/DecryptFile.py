@@ -1,26 +1,36 @@
 from cryptography.fernet import Fernet
+import os
 
-key = "h9o1i5n5tO3W_LpEWyirtgQAKSADB3h_AyXQpH407wQ="
+# Encryption key
+key = b'h9o1i5n5tO3W_LpEWyirtgQAKSADB3h_AyXQpH407wQ='  # Replace with your encryption key
 
-system_information_e = 'e_system.txt'
-clipboard_information_e = 'e_clipboard.txt'
-keys_information_e = 'e_keys_logged.txt'
+# Define the encrypted files and their corresponding decrypted file names
+encrypted_files = [
+    'keystroke_e.log',
+    'website_e.log',
+    'sysinfo_e.txt',
+    'clipboard_e.txt',
+    'microphone_e.wav',
+    'screenshot_e.png',
+    'logs_e.zip'
+]
+decrypted_file_names = [
+    'f_keystroke.txt',
+    'f_website.log',
+    'f_sysinfo.txt',
+    'f_clipboard.txt',
+    'f_microphone.wav',
+    'f_screenshot.png',
+    'f_logs.zip'
+]
 
-
-
-encrypted_files = [system_information_e, clipboard_information_e, keys_information_e]
-count = 0
-
-
-for decrypting_files in encrypted_files:
-
-    with open(encrypted_files[count], 'rb') as f:
-        data = f.read()
+# Decrypt each file using the encryption key
+for encrypted_file, decrypted_file_name in zip(encrypted_files, decrypted_file_names):
+    with open(encrypted_file, 'rb') as file:
+        data = file.read()
 
     fernet = Fernet(key)
-    decrypted = fernet.decrypt(data)
+    decrypted_data = fernet.decrypt(data)
 
-    with open("decryption.txt", 'ab') as f:
-        f.write(decrypted)
-
-    count += 1
+    with open(decrypted_file_name, 'wb') as decrypted_file:
+        decrypted_file.write(decrypted_data)
