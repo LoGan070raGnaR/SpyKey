@@ -56,7 +56,7 @@ Please note that using keyloggers or any form of surveillance software without p
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). You are free to modify and distribute the code as per the terms of the license.
+This project is licensed under the [GNU General Public License v3.0](LICENSE). You are free to modify and distribute the code as per the terms of the license.
 
 ## Contributing
 
