@@ -5,16 +5,16 @@ from email import encoders
 
 def send_email(zip_filename):
     # Sender and recipient email addresses
-    from_address = " " # Write senders email address
-    to_address = " " #Write receviers email address
+    from_address = "sender@example.com"  # Replace with the sender's email address
+    to_address = "recipient@example.com"  # Replace with the recipient's email address
 
     # Gmail SMTP server details
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
     # Sender's credentials (you might want to use environment variables instead of hardcoding the values)
-    username = " " #Write senders email address
-    password = " " #Write senders application specific password
+    username = "sender@example.com"  # Replace with the sender's email address
+    password = "password"  # Replace with the sender's application-specific password
 
     # Create a multipart message and set the headers
     message = MIMEMultipart()
@@ -38,4 +38,3 @@ def send_email(zip_filename):
         server.starttls()
         server.login(username, password)
         server.send_message(message)
-

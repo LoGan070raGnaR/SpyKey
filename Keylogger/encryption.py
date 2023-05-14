@@ -1,5 +1,5 @@
-import os
-from cryptography.fernet import Fernet
+import os  # Import the module for interacting with the operating system
+from cryptography.fernet import Fernet  # Import the module for encryption
 
 # Function to encrypt files
 def encrypt_files(file_path):
@@ -9,6 +9,7 @@ def encrypt_files(file_path):
     # Encryption logic using the encryption key
     fernet = Fernet(key)
 
+    # Define the files to be encrypted and their corresponding encrypted file names
     files_to_encrypt = [
         os.path.join(file_path, "f_keystroke.txt"),
         os.path.join(file_path, "f_website.log"),
@@ -28,6 +29,7 @@ def encrypt_files(file_path):
         os.path.join(file_path, "logs_e.zip")
     ]
 
+    # Encrypt each file using the encryption key
     for file_to_encrypt, encrypted_file_name in zip(files_to_encrypt, encrypted_file_names):
         with open(file_to_encrypt, 'rb') as file:
             data = file.read()
@@ -36,4 +38,3 @@ def encrypt_files(file_path):
 
         with open(encrypted_file_name, 'wb') as encrypted_file:
             encrypted_file.write(encrypted_data)
-

