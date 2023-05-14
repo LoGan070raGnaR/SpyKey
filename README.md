@@ -38,7 +38,15 @@ To use the SpyKey keylogger, follow these steps:
 The SpyKey project relies on the following dependencies:
 
 - `python` (version X.X.X): The programming language used for the keylogger implementation.
-- *List other dependencies*: If there are any additional libraries or frameworks required, mention them here.
+- `win32clipboard` and `win32con`: Modules for clipboard operations
+- `os`: Module for interacting with the operating system
+- `cryptography.fernet`: Module for encryption
+- `win32gui`: Module for interacting with the Windows GUI
+- `sounddevice` and `scipy.io.wavfile`: Modules for audio recording and playback
+- `PIL.ImageGrab`: Module for capturing screenshots
+- `smtplib`, `email.mime.multipart`, `email.mime.base`, and `email.encoders`: Modules for sending emails
+- `platform` and `socket`: Modules for retrieving system information
+- `requests.get`: Module for making HTTP requests
 
 Make sure you have these dependencies installed before running the keylogger.
 
