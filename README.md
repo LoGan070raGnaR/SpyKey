@@ -50,6 +50,38 @@ The SpyKey project relies on the following dependencies:
 
 Make sure you have these dependencies installed before running the keylogger.
 
+## Creating Python Executable
+
+If you want to create an executable file from the Python scripts, you can use tools like PyInstaller or cx_Freeze. Follow the steps below to create a standalone executable:
+
+1. Install the required package:
+
+   ```shell
+   pip install pyinstaller
+
+2. Navigate to the project directory:
+
+   ```shell
+   cd SpyKey
+
+3. Run the PyInstaller command to generate the executable:
+
+   ```shell
+   pyinstaller main.py --onefile
+
+This command creates a single executable file named `main.exe` (Windows) or `main` (Unix-like systems) in the `dist` directory.
+
+4. You can now run the executable directly:
+
+   ```shell
+   cd dist
+   main
+
+
+Note: Depending on your operating system, the generated executable may have a different name or extension.
+
+Please note that creating an executable is optional and not necessary for running the SpyKey keylogger. It is provided as a convenience for users who prefer standalone executables.
+
 ## Disclaimer
 
 Please note that using keyloggers or any form of surveillance software without proper authorization may be illegal or unethical. Ensure that you comply with the laws and regulations of your jurisdiction before using the SpyKey keylogger.
